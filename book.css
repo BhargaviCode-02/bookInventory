@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  margin: 0;
+  padding: 40px;
+  min-height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  margin-bottom: 30px;
+}
+
+table {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+thead th {
+  background: linear-gradient(90deg, #4f46e5, #7c3aed);
+  color: white;
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+}
+
+tbody tr {
+  transition: transform 0.2s ease;
+}
+
+tbody tr:hover {
+  transform: scale(1.02);
+}
+
+/* Row backgrounds with attribute selectors */
+tr[class="read"] {
+  background-image: linear-gradient(135deg, #10b981, #059669);
+}
+
+tr[class="to-read"] {
+  background-image: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+tr[class="in-progress"] {
+  background-image: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+tbody td {
+  padding: 16px;
+}
+
+/* All spans inline-block */
+span {
+  display: inline-block;
+}
+
+/* Status and rate containers */
+span[class="status"],
+span[class^="rate"] {
+  height: 28px;
+  width: 80px;
+  padding: 4px 8px;
+}
+
+/* Rate stars containers */
+span[class^="rate"] > span {
+  border: 2px solid #fff;
+  border-radius: 50%;
+  margin: 2px;
+  height: 16px;
+  width: 16px;
+  background-color: rgba(255,255,255,0.3);
+}
+
+/* Status styling by row class using attribute selectors */
+tr[class="to-read"] span[class="status"] {
+  border: 2px solid #eab308;
+  background-image: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+  border-radius: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+tr[class="read"] span[class="status"] {
+  border: 2px solid #059669;
+  background-image: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  border-radius: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+tr[class="in-progress"] span[class="status"] {
+  border: 2px solid #1d4ed8;
+  background-image: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  border-radius: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Test 46-47: FIRST descendant of span with word "one" */
+span[class~="one"] span:first-child {
+  background-image: linear-gradient(135deg, #fbbf24, #f59e0b);
+}
